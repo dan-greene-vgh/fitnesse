@@ -138,6 +138,10 @@ public class FitNesseMain {
     }
     return null;
   }
+  
+  public int returnAConstant() {
+    return 12;
+  }
 
   private ServerSocket createServerSocket(FitNesseContext context, ClassLoader classLoader) throws IOException {
     String protocol = context.getProperty(FitNesseContext.WIKI_PROTOCOL_PROPERTY);
