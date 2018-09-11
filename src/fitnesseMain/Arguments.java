@@ -81,6 +81,7 @@ public class Arguments {
     ContextConfigurator result = defaults;
 
     result = result.withParameter(LOG_LEVEL, verboseLogging ? "verbose" : "normal");
+    try {
     if (configFile != null)
       result = result.withParameter(CONFIG_FILE, configFile);
     if (port != null)
@@ -103,7 +104,9 @@ public class Arguments {
       result = result.withParameter(COMMAND, command);
     if (credentials != null)
       result = result.withParameter(CREDENTIALS, credentials);
-
+    } catch(Exception e) {
+      //do nothing
+    }
     return result;
   }
 
